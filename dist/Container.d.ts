@@ -1,0 +1,68 @@
+import { default as React } from 'react';
+import type { PropEx } from '@cssfn/css-types';
+import { BasicProps } from '@nodestrap/basic';
+/**
+ * Applies a responsive container layout.
+ * @returns A `Style` represents a responsive container layout.
+ */
+export declare const usesResponsiveContainerLayout: () => import("@cssfn/cssfn").StyleCollection;
+/**
+ * Applies a responsive container using grid layout.
+ * @returns A `Style` represents a responsive container using grid layout.
+ */
+export declare const usesResponsiveContainerGridLayout: () => import("@cssfn/cssfn").StyleCollection;
+export declare const usesContainerLayout: () => import("@cssfn/cssfn").StyleCollection;
+export declare const usesContainerVariants: () => import("@cssfn/cssfn").StyleCollection;
+export declare const usesContainer: () => import("@cssfn/cssfn").StyleCollection;
+export declare const useContainerSheet: import("@cssfn/types").Factory<import("jss").Classes<"main">>;
+export declare const cssProps: import("@cssfn/css-config").Refs<{
+    borderWidth: number;
+    borderRadius: number;
+    paddingInline: PropEx.Length;
+    paddingBlock: PropEx.Length;
+    paddingInlineSm: PropEx.Length;
+    paddingBlockSm: PropEx.Length;
+    paddingInlineMd: PropEx.Length;
+    paddingBlockMd: PropEx.Length;
+    paddingInlineLg: PropEx.Length;
+    paddingBlockLg: PropEx.Length;
+    paddingInlineXl: PropEx.Length;
+    paddingBlockXl: PropEx.Length;
+    paddingInlineXxl: PropEx.Length;
+    paddingBlockXxl: PropEx.Length;
+}>, cssDecls: import("@cssfn/css-config").Decls<{
+    borderWidth: number;
+    borderRadius: number;
+    paddingInline: PropEx.Length;
+    paddingBlock: PropEx.Length;
+    paddingInlineSm: PropEx.Length;
+    paddingBlockSm: PropEx.Length;
+    paddingInlineMd: PropEx.Length;
+    paddingBlockMd: PropEx.Length;
+    paddingInlineLg: PropEx.Length;
+    paddingBlockLg: PropEx.Length;
+    paddingInlineXl: PropEx.Length;
+    paddingBlockXl: PropEx.Length;
+    paddingInlineXxl: PropEx.Length;
+    paddingBlockXxl: PropEx.Length;
+}>, cssVals: import("@cssfn/css-config").Vals<{
+    borderWidth: number;
+    borderRadius: number;
+    paddingInline: PropEx.Length;
+    paddingBlock: PropEx.Length;
+    paddingInlineSm: PropEx.Length;
+    paddingBlockSm: PropEx.Length;
+    paddingInlineMd: PropEx.Length;
+    paddingBlockMd: PropEx.Length;
+    paddingInlineLg: PropEx.Length;
+    paddingBlockLg: PropEx.Length;
+    paddingInlineXl: PropEx.Length;
+    paddingBlockXl: PropEx.Length;
+    paddingInlineXxl: PropEx.Length;
+    paddingBlockXxl: PropEx.Length;
+}>, cssConfig: import("@cssfn/css-config").CssConfigSettings;
+export interface ContainerProps<TElement extends HTMLElement = HTMLElement> extends BasicProps<TElement> {
+    children?: React.ReactNode;
+}
+export declare function Container<TElement extends HTMLElement = HTMLElement>(props: ContainerProps<TElement>): JSX.Element;
+export { Container as default };
