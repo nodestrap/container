@@ -91,20 +91,13 @@ export const usesContainerVariants = () => {
         ]),
     ]);
 };
-export const usesContainer = () => {
-    return composition([
+export const useContainerSheet = createUseSheet(() => [
+    mainComposition([
         imports([
             // layouts:
             usesContainerLayout(),
             // variants:
             usesContainerVariants(),
-        ]),
-    ]);
-};
-export const useContainerSheet = createUseSheet(() => [
-    mainComposition([
-        imports([
-            usesContainer(),
         ]),
     ]),
 ]);

@@ -13,7 +13,6 @@ export declare const usesResponsiveContainerLayout: () => import("@cssfn/cssfn")
 export declare const usesResponsiveContainerGridLayout: () => import("@cssfn/cssfn").StyleCollection;
 export declare const usesContainerLayout: () => import("@cssfn/cssfn").StyleCollection;
 export declare const usesContainerVariants: () => import("@cssfn/cssfn").StyleCollection;
-export declare const usesContainer: () => import("@cssfn/cssfn").StyleCollection;
 export declare const useContainerSheet: import("@cssfn/types").Factory<import("jss").Classes<"main">>;
 export declare const cssProps: import("@cssfn/css-config").Refs<{
     borderWidth: number;
