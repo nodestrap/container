@@ -146,12 +146,10 @@ export function Container(props) {
     // styles:
     const sheet = useContainerSheet();
     // jsx:
-    return (<Basic 
-    // other props:
-    {...props} 
-    // variants:
-    mild={props.mild ?? true} 
-    // classes:
-    mainClass={props.mainClass ?? sheet.main}/>);
+    return (React.createElement(Basic, { ...props, 
+        // variants:
+        mild: props.mild ?? true, 
+        // classes:
+        mainClass: props.mainClass ?? sheet.main }));
 }
 export { Container as default };
