@@ -6,9 +6,9 @@ createSheet,
 // compositions:
 composition, mainComposition, globalDef, imports, 
 // layouts:
-layout, 
+layout, children, 
 // rules:
-rules, atRoot, } from '@cssfn/cssfn'; // cssfn core
+rules, variants, rule, atRoot, } from '@cssfn/cssfn'; // cssfn core
 import { 
 // hooks:
 createUseSheet, } from '@cssfn/react-cssfn'; // cssfn for react
@@ -23,6 +23,9 @@ import {
 expandBorderRadius, usesPadding, expandPadding, 
 // styles:
 usesBasicLayout, usesBasicVariants, Basic, } from '@nodestrap/basic';
+import { 
+// hooks:
+usesContainer, usesBorderAsContainer, } from '@nodestrap/content';
 // styles:
 /**
  * Applies a responsive container layout.
@@ -68,6 +71,84 @@ export const usesResponsiveContainerGridLayout = () => {
         }),
     ]);
 };
+export const usesContainerFill = () => {
+    // spacings:
+    const [, containerRefs] = usesContainer();
+    const positivePaddingInline = containerRefs.paddingInline;
+    const positivePaddingBlock = containerRefs.paddingBlock;
+    const negativePaddingInline = `calc(0px - ${positivePaddingInline})`;
+    const negativePaddingBlock = `calc(0px - ${positivePaddingBlock})`;
+    const fillSelfSelector = '.fill-self';
+    const fillSelector = ['.fill', fillSelfSelector];
+    return composition([
+        imports([
+            // borders:
+            usesBorderAsContainer({ itemsSelector: fillSelector }), // make a nicely rounded corners
+        ]),
+        layout({
+            // children:
+            ...children(fillSelector, [
+                layout({
+                    // sizes:
+                    // span to maximum width including parent's paddings:
+                    boxSizing: 'border-box',
+                    inlineSize: 'fill-available',
+                    fallbacks: {
+                        inlineSize: `calc(100% + (${positivePaddingInline} * 2))`,
+                    },
+                    // spacings:
+                    marginInline: negativePaddingInline, // cancel out parent's padding with negative margin
+                }),
+                variants([
+                    rule(':where(:first-child)', [
+                        layout({
+                            // spacings:
+                            marginBlockStart: negativePaddingBlock, // cancel out parent's padding with negative margin
+                        }),
+                    ]),
+                    rule(':where(:last-child)', [
+                        layout({
+                            // spacings:
+                            marginBlockEnd: negativePaddingBlock, // cancel out parent's padding with negative margin
+                        }),
+                    ]),
+                ]),
+            ]),
+            ...children(fillSelfSelector, [
+                layout({
+                    ...children('*', [
+                        layout({
+                            // spacings:
+                            paddingInline: positivePaddingInline, // restore parent's padding with positive margin
+                        }),
+                    ]),
+                }),
+                variants([
+                    rule(':where(:first-child)', [
+                        layout({
+                            ...children('*', [
+                                layout({
+                                    // spacings:
+                                    paddingBlockStart: positivePaddingBlock, // restore parent's padding with positive margin
+                                }),
+                            ]),
+                        }),
+                    ]),
+                    rule(':where(:last-child)', [
+                        layout({
+                            ...children('*', [
+                                layout({
+                                    // spacings:
+                                    paddingBlockEnd: positivePaddingBlock, // restore parent's padding with positive margin
+                                }),
+                            ]),
+                        }),
+                    ]),
+                ]),
+            ]),
+        }),
+    ]);
+};
 export const usesContainerLayout = () => {
     return composition([
         imports([
@@ -94,6 +175,8 @@ export const usesContainerVariants = () => {
 export const useContainerSheet = createUseSheet(() => [
     mainComposition([
         imports([
+            // fills:
+            usesContainerFill(),
             // layouts:
             usesContainerLayout(),
             // variants:
