@@ -154,7 +154,6 @@ export const usesContainerLayout = () => {
         imports([
             // layouts:
             usesBasicLayout(),
-            usesResponsiveContainerLayout(),
         ]),
         layout({
             // layouts:
@@ -162,6 +161,10 @@ export const usesContainerLayout = () => {
             // customize:
             ...usesGeneralProps(cssProps), // apply general cssProps
         }),
+        imports([
+            // layouts:
+            usesResponsiveContainerLayout(),
+        ]),
     ]);
 };
 export const usesContainerVariants = () => {
