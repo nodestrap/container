@@ -1,6 +1,32 @@
 import { default as React } from 'react';
 import type { PropEx } from '@cssfn/css-types';
-import { BasicProps } from '@nodestrap/basic';
+import { SelectorCollection } from '@cssfn/cssfn';
+import { OrientationRuleOptions, BasicProps } from '@nodestrap/basic';
+export declare const defaultOrientationRuleOptions: OrientationRuleOptions;
+export interface ContainerVars {
+    borderWidth: any;
+    borderStartStartRadius: any;
+    borderStartEndRadius: any;
+    borderEndStartRadius: any;
+    borderEndEndRadius: any;
+    paddingInline: any;
+    paddingBlock: any;
+}
+/**
+ * Uses container.
+ * @returns A `[Factory<StyleCollection>, ReadonlyRefs, ReadonlyDecls]` represents container definitions.
+ */
+export declare const usesContainer: () => readonly [() => import("@cssfn/cssfn").StyleCollection, import("@cssfn/css-var").ReadonlyRefs<ContainerVars>, import("@cssfn/css-var").ReadonlyDecls<ContainerVars>];
+export interface BorderContainerOptions extends OrientationRuleOptions {
+    itemsSelector?: SelectorCollection;
+}
+export declare const usesBorderAsContainer: (options?: BorderContainerOptions | undefined) => import("@cssfn/cssfn").StyleCollection;
+export interface BorderSeparatorOptions {
+    itemsSelector?: SelectorCollection;
+    swapFirstItem?: boolean;
+}
+export declare const usesBorderAsSeparatorBlock: (options?: BorderSeparatorOptions) => import("@cssfn/cssfn").StyleCollection;
+export declare const usesBorderAsSeparatorInline: (options?: BorderSeparatorOptions) => import("@cssfn/cssfn").StyleCollection;
 /**
  * Applies a responsive container layout.
  * @returns A `Style` represents a responsive container layout.
