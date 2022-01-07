@@ -37,7 +37,12 @@ export declare const usesResponsiveContainerLayout: () => import("@cssfn/cssfn")
  * @returns A `Style` represents a responsive container using grid layout.
  */
 export declare const usesResponsiveContainerGridLayout: () => import("@cssfn/cssfn").StyleCollection;
-export declare const usesContainerFill: () => import("@cssfn/cssfn").StyleCollection;
+export interface ContainerChildrenOptions {
+    fillSelector?: SelectorCollection;
+    fillSelfSelector?: SelectorCollection;
+}
+export declare const usesContainerChildrenFill: (options?: ContainerChildrenOptions) => import("@cssfn/cssfn").StyleCollection;
+export declare const usesContainerChildren: (options?: ContainerChildrenOptions) => import("@cssfn/cssfn").StyleCollection;
 export declare const usesContainerLayout: () => import("@cssfn/cssfn").StyleCollection;
 export declare const usesContainerVariants: () => import("@cssfn/cssfn").StyleCollection;
 export declare const useContainerSheet: import("@cssfn/types").Factory<import("jss").Classes<"main">>;

@@ -1,6 +1,6 @@
 {
   "name": "@nodestrap/container",
-  "version": "4.0.7",
+  "version": "4.0.8",
   "description": "A responsive wrapper with dynamic paddings based on device screen width.",
   "type": "module",
   "main": "dist/Container.js",
