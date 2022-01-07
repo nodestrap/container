@@ -2,6 +2,12 @@ import { default as React } from 'react';
 import type { PropEx } from '@cssfn/css-types';
 import { SelectorCollection } from '@cssfn/cssfn';
 import { OrientationRuleOptions, BasicProps } from '@nodestrap/basic';
+export declare const selectorIsVisibleChild: SelectorCollection;
+export declare const selectorIsFirstVisibleChild: SelectorCollection;
+export declare const selectorIsLastVisibleChild: SelectorCollection;
+export declare const selectorNotfirstVisibleChild: SelectorCollection;
+export declare const selectorNotLastVisibleChild: SelectorCollection;
+export declare const selectorNotSecondVisibleChild: SelectorCollection;
 export declare const defaultOrientationRuleOptions: OrientationRuleOptions;
 export interface ContainerVars {
     borderWidth: any;
