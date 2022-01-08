@@ -253,13 +253,17 @@ const usesBorderAsSeparator = (block, options = {}) => {
             [`border${block ? 'Inline' : 'Block'}Width`]: 0,
             // children:
             // remove double border by removing top-border at the subsequent sibling(s)
-            ...nextSiblings(`${itemsSelector}${selectorIsVisibleChild}`, [
+            ...nextSiblings(itemsSelector, [
                 variants([
-                    rule((swapFirstItem ? selectorNotSecondVisibleChild : '&'), [
-                        layout({
-                            // borders:
-                            [`border${block ? 'Block' : 'Inline'}StartWidth`]: 0, // remove top-border
-                        }),
+                    rule(selectorIsVisibleChild, [
+                        variants([
+                            rule((swapFirstItem ? selectorNotSecondVisibleChild : '&'), [
+                                layout({
+                                    // borders:
+                                    [`border${block ? 'Block' : 'Inline'}StartWidth`]: 0, // remove top-border
+                                }),
+                            ]),
+                        ]),
                     ]),
                 ]),
             ]),
