@@ -426,22 +426,14 @@ export const usesContainerChildrenFill = (options = {}) => {
                 variants([
                     rule(selectorIsFirstVisibleChild, [
                         layout({
-                            ...children('*', [
-                                layout({
-                                    // spacings:
-                                    paddingBlockStart: positivePaddingBlock, // restore parent's padding with positive margin
-                                }),
-                            ]),
+                            // spacings:
+                            paddingBlockStart: positivePaddingBlock, // restore parent's padding with positive margin
                         }),
                     ]),
                     rule(selectorIsLastVisibleChild, [
                         layout({
-                            ...children('*', [
-                                layout({
-                                    // spacings:
-                                    paddingBlockEnd: positivePaddingBlock, // restore parent's padding with positive margin
-                                }),
-                            ]),
+                            // spacings:
+                            paddingBlockEnd: positivePaddingBlock, // restore parent's padding with positive margin
                         }),
                     ]),
                 ]),
