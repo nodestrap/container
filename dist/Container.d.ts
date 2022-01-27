@@ -20,37 +20,37 @@ export interface ContainerVars {
 }
 /**
  * Uses container.
- * @returns A `[Factory<StyleCollection>, ReadonlyRefs, ReadonlyDecls]` represents container definitions.
+ * @returns A `[Factory<Rule>, ReadonlyRefs, ReadonlyDecls]` represents container definitions.
  */
-export declare const usesContainer: () => readonly [() => import("@cssfn/cssfn").StyleCollection, import("@cssfn/css-var").ReadonlyRefs<ContainerVars>, import("@cssfn/css-var").ReadonlyDecls<ContainerVars>];
+export declare const usesContainer: () => readonly [() => import("@cssfn/cssfn").Rule, import("@cssfn/css-var").ReadonlyRefs<ContainerVars>, import("@cssfn/css-var").ReadonlyDecls<ContainerVars>];
 export interface BorderContainerOptions extends OrientationRuleOptions {
     itemsSelector?: SelectorCollection;
 }
-export declare const usesBorderAsContainer: (options?: BorderContainerOptions | undefined) => import("@cssfn/cssfn").StyleCollection;
+export declare const usesBorderAsContainer: (options?: BorderContainerOptions | undefined) => import("@cssfn/cssfn").Rule;
 export interface BorderSeparatorOptions {
     itemsSelector?: SelectorCollection;
     swapFirstItem?: boolean;
 }
-export declare const usesBorderAsSeparatorBlock: (options?: BorderSeparatorOptions) => import("@cssfn/cssfn").StyleCollection;
-export declare const usesBorderAsSeparatorInline: (options?: BorderSeparatorOptions) => import("@cssfn/cssfn").StyleCollection;
+export declare const usesBorderAsSeparatorBlock: (options?: BorderSeparatorOptions) => import("@cssfn/cssfn").Rule;
+export declare const usesBorderAsSeparatorInline: (options?: BorderSeparatorOptions) => import("@cssfn/cssfn").Rule;
 /**
  * Applies a responsive container layout.
- * @returns A `Style` represents a responsive container layout.
+ * @returns A `Rule` represents a responsive container layout.
  */
-export declare const usesResponsiveContainerLayout: () => import("@cssfn/cssfn").StyleCollection;
+export declare const usesResponsiveContainerLayout: () => import("@cssfn/cssfn").Rule;
 /**
  * Applies a responsive container using grid layout.
- * @returns A `Style` represents a responsive container using grid layout.
+ * @returns A `Rule` represents a responsive container using grid layout.
  */
-export declare const usesResponsiveContainerGridLayout: () => import("@cssfn/cssfn").StyleCollection;
+export declare const usesResponsiveContainerGridLayout: () => import("@cssfn/cssfn").Rule;
 export interface ContainerChildrenOptions {
     fillSelector?: SelectorCollection;
     fillSelfSelector?: SelectorCollection;
 }
-export declare const usesContainerChildrenFill: (options?: ContainerChildrenOptions) => import("@cssfn/cssfn").StyleCollection;
-export declare const usesContainerChildren: (options?: ContainerChildrenOptions) => import("@cssfn/cssfn").StyleCollection;
-export declare const usesContainerLayout: () => import("@cssfn/cssfn").StyleCollection;
-export declare const usesContainerVariants: () => import("@cssfn/cssfn").StyleCollection;
+export declare const usesContainerChildrenFill: (options?: ContainerChildrenOptions) => import("@cssfn/cssfn").Rule;
+export declare const usesContainerChildren: (options?: ContainerChildrenOptions) => import("@cssfn/cssfn").Rule;
+export declare const usesContainerLayout: () => import("@cssfn/cssfn").Rule;
+export declare const usesContainerVariants: () => import("@cssfn/cssfn").Rule;
 export declare const useContainerSheet: import("@cssfn/types").Factory<import("jss").Classes<"main">>;
 export declare const cssProps: import("@cssfn/css-config").Refs<{
     borderWidth: number;
