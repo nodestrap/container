@@ -469,7 +469,7 @@ createSheet(() => [
                     // overwrites propName = propName{BreakpointName}:
                     ...overwriteProps(cssDecls, usesSuffixedProps(cssProps, breakpointName)),
                 }),
-            ], { minSpecificityWeight: 2 }),
+            ], { specificityWeight: 2 }),
         })),
     ]),
 ])

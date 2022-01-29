@@ -1,6 +1,6 @@
 {
   "name": "@nodestrap/container",
-  "version": "4.0.13",
+  "version": "4.0.14",
   "description": "A responsive wrapper with dynamic paddings based on device screen width.",
   "type": "module",
   "main": "dist/Container.js",
@@ -30,7 +30,7 @@
     "@cssfn/css-config": "^1.0.4",
     "@cssfn/css-types": "^1.0.4",
     "@cssfn/css-var": "^1.0.4",
-    "@cssfn/cssfn": "^1.0.10",
+    "@cssfn/cssfn": "^1.0.11",
     "@cssfn/react-cssfn": "^1.0.11",
     "@nodestrap/basic": "^4.0.7",
     "@nodestrap/breakpoints": "^4.0.3",
