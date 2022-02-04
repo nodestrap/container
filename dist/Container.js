@@ -338,9 +338,11 @@ export const usesResponsiveContainerGridLayout = () => {
         ...expandBorderRadius(cssProps),
         // spacings:
         ...expandPadding(cssProps),
-        // since we use grid as paddings, so the css paddings are no longer needed:
-        paddingInline: null,
-        paddingBlock: null, // turn off physical padding, use logical padding we've set above
+        ...style({
+            // since we use grid as paddings, so the css paddings are no longer needed:
+            paddingInline: null,
+            paddingBlock: null, // turn off physical padding, use logical padding we've set above
+        }),
     });
 };
 export const usesContainerChildrenFill = (options = {}) => {
